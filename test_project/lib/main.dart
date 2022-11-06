@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:test_project/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Drag and Drop',
       theme: ThemeData(
         // This is the theme of your application.
@@ -95,6 +97,18 @@ class _HomePageState extends State<HomePage> {
             if(!gameOver)
               Row(
                 children: <Widget>[
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                        ),
+                        onPressed: () =>HomeView(),
+                        child: const Text('Another Page'),
+                      ),
+                    ],
+                  ),
+
                   Column(
                       children: items.map((item) {
                         return Container(
